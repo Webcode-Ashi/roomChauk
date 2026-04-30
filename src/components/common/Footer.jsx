@@ -44,7 +44,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-white/40 text-sm leading-relaxed mb-6">
-              India's most trusted premium rental platform. Connecting quality tenants with exceptional properties across 42+ cities.
+              India's most trusted premium rental platform. Connecting quality tenants with exceptional rooms across 42+ cities.
             </p>
             <div className="flex gap-3">
               {[Instagram, Twitter, Linkedin, Facebook].map((Icon, i) => (
@@ -69,7 +69,7 @@ export default function Footer() {
                 { to: '/about', label: 'About Us' },
                 { to: '/contact', label: 'Contact' },
                 { to: '/login', label: 'Sign In' },
-                { to: '/signup', label: 'List Your Property' },
+                { to: '/signup', label: 'List Your Room' },
               ].map(link => (
                 <li key={link.to}>
                   <Link

@@ -25,7 +25,7 @@ export default function AboutPage() {
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="tag mb-4 inline-block">Our Story</span>
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
-            Redefining Rental<br /><span className="gradient-text italic">Living in India</span>
+            Redefining Rental<br /><span className="gradient-text italic">Living in Lucknow,India</span>
           </h1>
           <p className="text-white/60 text-xl leading-relaxed max-w-2xl mx-auto">
             Room Chauk was born from a simple belief: finding your perfect rental home should be as exciting as moving in. No stress, no fraud, no brokers.
@@ -64,8 +64,8 @@ export default function AboutPage() {
               </p>
               <div className="grid grid-cols-2 gap-4">
                 <div className="p-5 bg-cream rounded-2xl border border-gray-100">
-                  <p className="font-serif text-2xl font-bold gradient-text mb-1">2022</p>
-                  <p className="text-dark-500 text-sm">Founded in Hyderabad</p>
+                  <p className="font-serif text-2xl font-bold gradient-text mb-1">2026</p>
+                  <p className="text-dark-500 text-sm">Founded in Lucknow</p>
                 </div>
                 <div className="p-5 bg-cream rounded-2xl border border-gray-100">
                   <p className="font-serif text-2xl font-bold gradient-text mb-1">₹50Cr+</p>

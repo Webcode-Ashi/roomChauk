@@ -205,26 +205,27 @@ export const stats = [
 export const teamMembers = [
   {
     id: 1,
-    name: "Aryan Mehta",
-    role: "CEO & Co-Founder",
-    avatar: "https://i.pravatar.cc/150?img=33",
-    bio: "Former Google product lead with 10+ years in PropTech. Visionary behind Room Chauk's premium positioning.",
-    linkedin: "#",
-    twitter: "#",
-  },
-  {
-    id: 2,
-    name: "Ananya Reddy",
-    role: "CTO & Co-Founder",
+    name: "Ashi",
+    role: "Team Leader (Server Management)",
     avatar: "https://i.pravatar.cc/150?img=47",
     bio: "Full-stack architect. Built and scaled platforms serving millions. IIT Bombay alumna with passion for clean code.",
     linkedin: "#",
     twitter: "#",
   },
   {
+    id: 2,
+    name: "Asish Singh",
+    role: "Backend Designer",
+    avatar: "https://i.pravatar.cc/150?img=33",
+    bio: "Former Google product lead with 10+ years in PropTech. Visionary behind Room Chauk's premium positioning.",
+    linkedin: "#",
+    twitter: "#",
+  },
+  
+  {
     id: 3,
     name: "Siddharth Jain",
-    role: "Head of Design",
+    role: "Fronted Designer",
     avatar: "https://i.pravatar.cc/150?img=52",
     bio: "Award-winning UX designer. Previously at Airbnb and Swiggy. Obsessed with pixel-perfect interfaces.",
     linkedin: "#",
@@ -233,7 +234,7 @@ export const teamMembers = [
   {
     id: 4,
     name: "Kavya Nair",
-    role: "Head of Operations",
+    role: "SEO & Graphics Designer",
     avatar: "https://i.pravatar.cc/150?img=48",
     bio: "Operations expert who ensures every listing on Room Chauk is verified and of the highest quality standard.",
     linkedin: "#",

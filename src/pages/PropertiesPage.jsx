@@ -15,7 +15,7 @@ export default function PropertiesPage() {
   const [showFilters, setShowFilters] = useState(false);
   const [viewMode, setViewMode] = useState('grid');
 
-  const propertyTypes = ['All', 'Apartment', 'Villa', 'Studio', 'Penthouse', 'PG'];
+  const propertyTypes = ['All', 'Sector A', 'Sector B', 'Sector J', 'Aliganj', 'Sector C'];
 
   const filtered = useMemo(() => {
     let list = [...properties];
@@ -44,12 +44,12 @@ export default function PropertiesPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,169,110,0.08),transparent_70%)]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="tag mb-4 inline-block">Browse Properties</span>
+          <span className="tag mb-4 inline-block">Browse Rooms</span>
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-white mb-3">
             Discover Your <span className="gradient-text italic">Dream Space</span>
           </h1>
           <p className="text-white/50 text-lg max-w-xl mx-auto">
-            {filtered.length} curated properties across India's finest locations
+            {filtered.length} curated Rooms across India's finest locations
           </p>
         </div>
       </section>
@@ -151,7 +151,7 @@ export default function PropertiesPage() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <p className="text-dark-900 font-semibold">
-              <span className="gradient-text font-bold">{filtered.length}</span> properties found
+              <span className="gradient-text font-bold">{filtered.length}</span> rooms found
             </p>
             {hasFilters && <p className="text-dark-400 text-xs mt-0.5">Filters applied</p>}
           </div>

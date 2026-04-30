@@ -61,7 +61,7 @@ function HeroSection() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold-500/20 backdrop-blur-sm border border-gold-500/30 text-gold-300 text-xs font-semibold px-4 py-2 rounded-full mb-6 animate-fade-up">
             <span className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
-            India's Premium Rental Platform
+            India's Affordable Rental Platform
           </div>
 
           {/* Heading */}
@@ -72,7 +72,7 @@ function HeroSection() {
           </h1>
 
           <p className="text-white/70 text-lg md:text-xl mb-10 leading-relaxed max-w-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            Discover curated luxury rentals across India's finest cities. From cozy studios to lavish penthouses — your dream home awaits.
+            Discover curated luxury rentals across India's finest cities. From cozy studios to lavish penthouses — your dream room awaits.
           </p>
 
           {/* Search Box */}
@@ -102,7 +102,7 @@ function HeroSection() {
           </form>
 
           {/* Quick tags */}
-          <div className="flex flex-wrap gap-2 animate-fade-up" style={{ animationDelay: '0.4s' }}>
+          <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <span className="text-white/50 text-sm mr-1">Popular:</span>
             {['Hyderabad', 'Bangalore', 'Mumbai', 'Gurgaon', 'Pune'].map(city => (
               <button
@@ -117,7 +117,7 @@ function HeroSection() {
         </div>
 
         {/* Stats floating cards */}
-        <div className="hidden lg:flex items-end absolute right-8 bottom-8 gap-4">
+        {/* <div className="hidden lg:flex items-end absolute right-8 bottom-8 gap-4">
           <div className="glass rounded-2xl p-4 text-center">
             <p className="font-serif text-2xl font-bold text-white">15K+</p>
             <p className="text-white/50 text-xs">Properties</p>
@@ -130,7 +130,7 @@ function HeroSection() {
             <p className="font-serif text-2xl font-bold text-white">42+</p>
             <p className="text-white/50 text-xs">Cities</p>
           </div>
-        </div>
+        </div> */}
       </div>
 
       {/* Scroll indicator */}
@@ -174,8 +174,8 @@ function FeaturedProperties() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <SectionHeader
             tag="Hand-Picked Listings"
-            title={<>Featured <span className="gradient-text italic">Properties</span></>}
-            subtitle="Explore our most sought-after rental homes, verified and curated for the discerning tenant."
+            title={<>Featured <span className="gradient-text italic">Rooms</span></>}
+            subtitle="Explore our most sought-after rental rooms, verified and curated for the discerning tenant."
             center={false}
           />
           <Link to="/properties" className="flex items-center gap-2 text-gold-600 font-semibold text-sm hover:gap-3 transition-all mt-4 md:mt-0 whitespace-nowrap">
@@ -357,9 +357,9 @@ function CTASection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <span className="tag mb-4 inline-block">Own a Property?</span>
+          <span className="tag mb-4 inline-block">Own a Room?</span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
-            List Your Property,<br />
+            List Your Room,<br />
             <span className="gradient-text italic">Reach Thousands</span>
           </h2>
           <p className="text-white/60 text-lg mb-8 leading-relaxed">
@@ -375,7 +375,7 @@ function CTASection() {
           </ul>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link to="/signup" className="btn-gold px-8 py-4 rounded-xl font-semibold text-sm flex items-center gap-2 justify-center">
-              List Your Property <ArrowRight size={16} />
+              List Your Rooms <ArrowRight size={16} />
             </Link>
             <Link to="/contact" className="px-8 py-4 rounded-xl font-semibold text-sm flex items-center gap-2 justify-center border border-white/20 text-white hover:bg-white/10 transition-colors">
               Talk to Us <Phone size={16} />

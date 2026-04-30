@@ -21,7 +21,7 @@ export default function Navbar() {
 
   const navLinks = [
     { to: '/', label: 'Home' },
-    { to: '/properties', label: 'Properties' },
+    { to: '/properties', label: 'Rooms' },
     { to: '/about', label: 'About' },
     { to: '/contact', label: 'Contact' },
   ];
@@ -80,7 +80,7 @@ export default function Navbar() {
               to="/signup"
               className="btn-gold text-sm font-semibold px-6 py-2.5 rounded-xl shadow-gold transition-all"
             >
-              List Property
+              List Room
             </Link>
 
             {/* User dropdown (demo) */}
