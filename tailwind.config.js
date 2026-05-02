@@ -33,11 +33,11 @@ export default {
         },
         cream: '#F8F5F0',
       },
-      fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"DM Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"Fira Code"', 'monospace'],
-      },
+       fontFamily = {
+  serif: ["Merriweather", "serif"],
+  sans: ["Inter", "system-ui", "sans-serif"],
+  mono: ["JetBrains Mono", "monospace"],
+},
       animation: {
         'fade-up': 'fadeUp 0.6s ease-out forwards',
         'fade-in': 'fadeIn 0.4s ease-out forwards',

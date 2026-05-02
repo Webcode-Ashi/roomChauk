@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Home, ChevronDown, User, LogOut, Heart, Settings } from 'lucide-react';
-
+import Image from '../../../Public/logo.png'
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -31,22 +31,23 @@ export default function Navbar() {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
       scrolled 
-        ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-gray-100' 
+        ? 'bg-white/95 backdrop-blur-xl shadow-lg  border-gray-100' 
         : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center shadow-gold">
-              <Home size={18} className="text-white" />
-            </div>
-            <div className="leading-none">
-              <span className={`font-serif font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-dark-900' : 'text-white'}`}>
+
+          <img src={Image} alt="" className='h-10'/>
+            {/* <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-gold-500 to-gold-700 flex items-center justify-center shadow-gold">
+            </div> */}
+            {/* <div className="leading-none">
+              <span className={`font-serif font-bold text-xl tracking-tight transition-colors ${scrolled ? 'text-white-900' : 'text-dark'}`}>
                 Room
               </span>
               <span className="font-serif font-bold text-xl gradient-text"> Chauk</span>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Nav */}
@@ -55,10 +56,10 @@ export default function Navbar() {
               <Link
                 key={link.to}
                 to={link.to}
-                className={`nav-link text-sm font-medium tracking-wide transition-colors ${
+                className={`nav-link text-md font-bold tracking-wide transition-colors ${
                   scrolled
-                    ? isActive(link.to) ? 'text-gold-500' : 'text-dark-800 hover:text-gold-500'
-                    : isActive(link.to) ? 'text-gold-400' : 'text-white/90 hover:text-white'
+                    ? isActive(link.to) ? 'text-gold-500' : 'text-dark-800 hover:text-gold-900'
+                    : isActive(link.to) ? 'text-gold-400' : 'text-gold-500/90 hover:text-black'
                 } ${isActive(link.to) ? 'active' : ''}`}
               >
                 {link.label}
@@ -71,7 +72,7 @@ export default function Navbar() {
             <Link
               to="/login"
               className={`text-sm font-medium px-4 py-2 rounded-lg transition-all ${
-                scrolled ? 'text-dark-700 hover:text-gold-500' : 'text-white/90 hover:text-white'
+                scrolled ? 'text-dark-700 hover:text-gold-500' : 'text-black/90 hover:text-black'
               }`}
             >
               Sign In

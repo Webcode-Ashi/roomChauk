@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import {
   Search, MapPin, ChevronRight, Star, Shield, Zap, Users,
   Building2, Home, Layers, ArrowRight, Play, CheckCircle,
-  TrendingUp, Award, Phone, Quote
+  TrendingUp, Award, Phone, Quote,ChevronLeft 
 } from 'lucide-react';
 import PropertyCard from '../components/common/PropertyCard';
 import SectionHeader from '../components/common/SectionHeader';
@@ -67,7 +67,7 @@ function HeroSection() {
           {/* Heading */}
           <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight animate-fade-up" style={{ animationDelay: '0.1s' }}>
             Find Your{' '}
-            <span className="gradient-text italic">Perfect</span>
+            <span className="gradient-text ">Perfect</span>
             <br />Space to Live
           </h1>
 
@@ -76,34 +76,34 @@ function HeroSection() {
           </p>
 
           {/* Search Box */}
-          <form onSubmit={handleSearch} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-2 flex flex-col sm:flex-row gap-2 mb-8 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            <div className="flex items-center gap-3 flex-1 bg-white rounded-xl px-4 py-3">
+          <form onSubmit={handleSearch} className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-md p-2 flex flex-col sm:flex-row gap-2 mb-8 animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex items-center gap-3 flex-1 bg-white rounded-md px-4 py-3">
               <MapPin size={18} className="text-gold-500 flex-shrink-0" />
               <input
                 type="text"
                 placeholder="Search by city, locality..."
                 value={searchQuery}
                 onChange={e => setSearchQuery(e.target.value)}
-                className="flex-1 text-dark-900 placeholder-dark-400 text-sm bg-transparent outline-none"
+                className="flex-1 text-dark-900  placeholder-dark-400 text-sm bg-transparent outline-none"
               />
             </div>
             <select
               value={propertyType}
               onChange={e => setPropertyType(e.target.value)}
-              className="bg-white rounded-xl px-4 py-3 text-dark-700 text-sm outline-none cursor-pointer min-w-32"
+              className="bg-white rounded-md px-4 py-3 text-dark-700  text-sm outline-none cursor-pointer min-w-32"
             >
               {['All Types', 'Apartment', 'Villa', 'Studio', 'Penthouse', 'PG'].map(t => (
-                <option key={t}>{t}</option>
+                <option className='' key={t}>{t}</option>
               ))}
             </select>
-            <button type="submit" className="btn-gold px-6 py-3 rounded-xl text-sm font-bold flex items-center gap-2 justify-center">
+            <button type="submit" className="btn-gold px-6 py-3 rounded-md text-sm font-bold flex items-center gap-2 justify-center">
               <Search size={16} /> Search
             </button>
           </form>
 
           {/* Quick tags */}
           <div className="flex flex-wrap gap-4 animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <span className="text-white/50 text-sm mr-1">Popular:</span>
+            <span className="text-white/50 text-sm mr-1  text-xl">Popular:</span>
             {['Hyderabad', 'Bangalore', 'Mumbai', 'Gurgaon', 'Pune'].map(city => (
               <button
                 key={city}
@@ -134,9 +134,75 @@ function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
         <span className="text-white/40 text-xs tracking-widest uppercase">Scroll</span>
         <div className="w-px h-10 bg-gradient-to-b from-white/40 to-transparent" />
+      </div> */}
+    </section>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// CATEGORIES
+// ────────────────────────────────────────────────────────────────────
+function CategoriesSection() {
+  return (
+    <section className="py-12 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeader
+          tag="Browse by Type"
+          title={<>Explore <span className="gradient-text ">Categories</span></>}
+          subtitle="From cozy studios to sprawling villas — find the type of home that fits your lifestyle."
+        />
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {categories.map(cat => (
+            <Link
+              key={cat.id}
+              to={`/properties?type=${cat.name}`}
+              className="group relative rounded-2xl overflow-hidden h-40 cursor-pointer"
+            >
+              <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              <div className="absolute inset-0 flex flex-col items-center justify-end p-4 text-center">
+                <p className="text-white font-semibold text-sm">{cat.name}</p>
+                <p className="text-white/60 text-xs">{cat.count} listings</p>
+              </div>
+              <div className="absolute inset-0 border-2 border-gold-400/0 group-hover:border-gold-400/60 rounded-2xl transition-all duration-300" />
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ────────────────────────────────────────────────────────────────────
+// LATEST LISTINGS
+// ────────────────────────────────────────────────────────────────────
+function LatestListings() {
+  return (
+    <section className="py-12 bg-cream">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div className="flex flex-col md:flex-row md:items-center justify-between">
+  <SectionHeader
+    tag="Fresh on Market"
+    title={<>Best <span className="gradient-text">Selling</span></>}
+    subtitle="Newly added properties — be the first to inquire."
+    center={false}
+  />
+
+  <Link
+    to="/properties"
+    className="flex items-center btn-gold px-4 py-3 rounded-md gap-2 text-gold-600 font-semibold text-sm hover:gap-3 transition-all mt-4 md:mt-0 whitespace-nowrap"
+  >
+    Browse All <ArrowRight size={16} />
+  </Link>
+</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {properties.slice(0, 6).map(p => (
+            <PropertyCard key={p.id} property={p} />
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -165,67 +231,34 @@ function StatsBand() {
 // ────────────────────────────────────────────────────────────────────
 // FEATURED PROPERTIES
 // ────────────────────────────────────────────────────────────────────
-function FeaturedProperties() {
-  const featured = properties.filter(p => p.featured);
+// function FeaturedProperties() {
+//   const featured = properties.filter(p => p.featured);
 
-  return (
-    <section className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <SectionHeader
-            tag="Hand-Picked Listings"
-            title={<>Featured <span className="gradient-text italic">Rooms</span></>}
-            subtitle="Explore our most sought-after rental rooms, verified and curated for the discerning tenant."
-            center={false}
-          />
-          <Link to="/properties" className="flex items-center gap-2 text-gold-600 font-semibold text-sm hover:gap-3 transition-all mt-4 md:mt-0 whitespace-nowrap">
-            View All <ArrowRight size={16} />
-          </Link>
-        </div>
+//   return (
+//     <section className="py-24 bg-cream">
+//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+//           <SectionHeader
+//             tag="Hand-Picked Listings"
+//             title={<>Featured <span className="gradient-text ">Rooms</span></>}
+//             subtitle="Explore our most sought-after rental rooms, verified and curated for the discerning tenant."
+//             center={false}
+//           />
+//           <Link to="/properties" className="flex items-center gap-2 text-gold-600 font-semibold text-sm hover:gap-3 transition-all mt-4 md:mt-0 whitespace-nowrap">
+//             View All <ArrowRight size={16} />
+//           </Link>
+//         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map(p => (
-            <PropertyCard key={p.id} property={p} featured />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+//         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+//           {featured.map(p => (
+//             <PropertyCard key={p.id} property={p} featured />
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
-// ────────────────────────────────────────────────────────────────────
-// CATEGORIES
-// ────────────────────────────────────────────────────────────────────
-function CategoriesSection() {
-  return (
-    <section className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader
-          tag="Browse by Type"
-          title={<>Explore <span className="gradient-text italic">Categories</span></>}
-          subtitle="From cozy studios to sprawling villas — find the type of home that fits your lifestyle."
-        />
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-          {categories.map(cat => (
-            <Link
-              key={cat.id}
-              to={`/properties?type=${cat.name}`}
-              className="group relative rounded-2xl overflow-hidden h-40 cursor-pointer"
-            >
-              <img src={cat.image} alt={cat.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="absolute inset-0 flex flex-col items-center justify-end p-4 text-center">
-                <p className="text-white font-semibold text-sm">{cat.name}</p>
-                <p className="text-white/60 text-xs">{cat.count} listings</p>
-              </div>
-              <div className="absolute inset-0 border-2 border-gold-400/0 group-hover:border-gold-400/60 rounded-2xl transition-all duration-300" />
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 // ────────────────────────────────────────────────────────────────────
 // WHY CHOOSE US
@@ -241,7 +274,7 @@ function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden">
+    <section className="py-10 bg-dark-900 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold-500/5 rounded-full blur-3xl" />
@@ -251,7 +284,7 @@ function WhyChooseUs() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           tag="Why Room Chauk"
-          title={<>Why <span className="gradient-text italic">Choose</span> Us</>}
+          title={<>Why <span className="gradient-text ">Choose</span> Us</>}
           subtitle="We've redefined the rental experience with transparency, trust, and technology."
           light
         />
@@ -271,33 +304,7 @@ function WhyChooseUs() {
   );
 }
 
-// ────────────────────────────────────────────────────────────────────
-// LATEST LISTINGS
-// ────────────────────────────────────────────────────────────────────
-function LatestListings() {
-  return (
-    <section className="py-24 bg-cream">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-          <SectionHeader
-            tag="Fresh on Market"
-            title={<>Latest <span className="gradient-text italic">Listings</span></>}
-            subtitle="Newly added properties — be the first to inquire."
-            center={false}
-          />
-          <Link to="/properties" className="flex items-center gap-2 text-gold-600 font-semibold text-sm hover:gap-3 transition-all mt-4 md:mt-0 whitespace-nowrap">
-            Browse All <ArrowRight size={16} />
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.slice(0, 6).map(p => (
-            <PropertyCard key={p.id} property={p} />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+
 
 // ────────────────────────────────────────────────────────────────────
 // TESTIMONIALS
@@ -305,53 +312,93 @@ function LatestListings() {
 function TestimonialsSection() {
   const [active, setActive] = useState(0);
 
+  const pairs = [];
+  for (let i = 0; i < testimonials.length; i += 2) {
+    pairs.push(testimonials.slice(i, i + 2));
+  }
+
   return (
-    <section className="py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           tag="Client Stories"
-          title={<>What Our <span className="gradient-text italic">Clients</span> Say</>}
+          title={<>What Our <span className="gradient-text">Clients</span> Say</>}
           subtitle="Real experiences from real tenants and property owners across India."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {testimonials.slice(0, 4).map((t, i) => (
-            <div key={t.id} className="p-7 rounded-2xl bg-cream border border-gray-100 hover:border-gold-200 hover:shadow-gold transition-all duration-300 group">
-              <div className="flex gap-1 mb-4">
-                {[...Array(t.rating)].map((_, j) => (
-                  <Star key={j} size={14} className="text-amber-400" fill="currentColor" />
-                ))}
-              </div>
-              <Quote size={28} className="text-gold-300 mb-3" />
-              <p className="text-dark-600 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
-                <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-gold-200" />
-                <div>
-                  <p className="font-semibold text-dark-900 text-sm">{t.name}</p>
-                  <p className="text-dark-400 text-xs">{t.role}</p>
+        <div className="relative max-w-4xl mx-auto">
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${active * 100}%)` }}
+            >
+              {pairs.map((pair, si) => (
+                <div key={si} className="min-w-full grid grid-cols-1 md:grid-cols-2 gap-8 px-1">
+                  {pair.map((t) => (
+                    <div key={t.id} className="p-7 rounded-2xl bg-cream border border-gray-100 hover:border-gold-200 hover:shadow-gold transition-all duration-300 group">
+                      <div className="flex gap-1 mb-4">
+                        {[...Array(t.rating)].map((_, j) => (
+                          <Star key={j} size={14} className="text-amber-400" fill="currentColor" />
+                        ))}
+                      </div>
+                      <Quote size={28} className="text-gold-300 mb-3" />
+                      <p className="text-dark-600 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
+                      <div className="flex items-center gap-3 pt-4 border-t border-gray-200">
+                        <img src={t.avatar} alt={t.name} className="w-10 h-10 rounded-full object-cover ring-2 ring-gold-200" />
+                        <div>
+                          <p className="font-semibold text-dark-900 text-sm">{t.name}</p>
+                          <p className="text-dark-400 text-xs">{t.role}</p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              ))}
             </div>
-          ))}
+          </div>
+
+          {/* Arrows */}
+          <button
+            onClick={() => setActive((active - 1 + pairs.length) % pairs.length)}
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow hover:shadow-md transition-all"
+          >
+            <ChevronLeft size={18} />
+          </button>
+          <button
+            onClick={() => setActive((active + 1) % pairs.length)}
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center shadow hover:shadow-md transition-all"
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          {/* Dots */}
+          <div className="flex justify-center gap-2 mt-8">
+            {pairs.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActive(i)}
+                className={`w-2 h-2 rounded-full transition-all duration-300 ${i === active ? 'bg-amber-400 scale-125' : 'bg-gray-300'}`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
   );
 }
-
 // ────────────────────────────────────────────────────────────────────
 // CTA SECTION
 // ────────────────────────────────────────────────────────────────────
 function CTASection() {
   return (
-    <section className="py-24 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden ">
       <div className="absolute inset-0">
         <img
           src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1800&q=80"
           alt=""
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-dark-900/85" />
+        <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/80 to-transparent" />
       </div>
 
@@ -395,10 +442,12 @@ export default function HomePage() {
     <main>
       <HeroSection />
       <StatsBand />
-      <FeaturedProperties />
+      {/* <FeaturedProperties /> */}
+     
       <CategoriesSection />
+       <LatestListings />
       <WhyChooseUs />
-      <LatestListings />
+      
       <TestimonialsSection />
       <CTASection />
     </main>

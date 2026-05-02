@@ -51,6 +51,7 @@ export default function PropertiesPage() {
           <p className="text-white/50 text-lg max-w-xl mx-auto">
             {filtered.length} curated Rooms across India's finest locations
           </p>
+          
         </div>
       </section>
 

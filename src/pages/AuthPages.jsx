@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Home, Eye, EyeOff, Mail, Lock, ArrowRight, CheckCircle } from 'lucide-react';
-
+import Navbar from '../components/common/Navbar';
+import Footer from '../components/common/Footer';
 function AuthLayout({ children, image, side }) {
   return (
+    <>
+    <Navbar/>
     <div className="min-h-screen flex">
       {/* Left side - form */}
       <div className="flex-1 flex items-center justify-center p-8 bg-white">
@@ -31,6 +34,8 @@ function AuthLayout({ children, image, side }) {
         </div>
       </div>
     </div>
+    <Footer/>
+    </>
   );
 }
 

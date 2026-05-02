@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen pt-20">
       {/* Hero */}
-      <section className="relative py-28 bg-dark-900 overflow-hidden">
+      <section className="relative py-10 bg-dark-900 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80"
@@ -27,18 +27,16 @@ export default function AboutPage() {
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-5 leading-tight">
             Redefining Rental<br /><span className="gradient-text italic">Living in Lucknow,India</span>
           </h1>
-          <p className="text-white/60 text-xl leading-relaxed max-w-2xl mx-auto">
-            Room Chauk was born from a simple belief: finding your perfect rental home should be as exciting as moving in. No stress, no fraud, no brokers.
-          </p>
+          
         </div>
       </section>
 
       {/* Stats */}
-      <section className="bg-cream py-16">
+      <section className="bg-cream py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <div key={i} className="text-center bg-white rounded-2xl p-6 shadow-md border border-gray-100">
+              <div key={i} className="text-center bg-dark rounded-2xl p-6 shadow-md border border-gray-100">
                 <p className="font-serif text-4xl font-bold gradient-text mb-1">{stat.value}</p>
                 <p className="text-dark-400 text-sm uppercase tracking-wider">{stat.label}</p>
               </div>
@@ -48,7 +46,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-white">
+      <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -98,7 +96,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission / Vision */}
-      <section className="py-20 bg-dark-900 relative overflow-hidden">
+      <section className="py-16 bg-dark-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,169,110,0.06),transparent_70%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -125,11 +123,11 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-cream">
+      <section className="py-12 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tag="Our Values"
-            title={<>What We <span className="gradient-text italic">Stand For</span></>}
+            title={<>What We <span className="gradient-text ">Stand For</span></>}
             subtitle="These core principles guide every decision we make at Room Chauk."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -147,11 +145,11 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-24 bg-white">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionHeader
             tag="Meet the Team"
-            title={<>The People Behind <span className="gradient-text italic">Room Chauk</span></>}
+            title={<>The People Behind <span className="gradient-text ">Room Chauk</span></>}
             subtitle="A passionate team of builders, designers, and visionaries on a mission to revolutionize rental living."
           />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
