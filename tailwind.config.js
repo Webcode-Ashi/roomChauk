@@ -33,7 +33,7 @@ export default {
         },
         cream: '#F8F5F0',
       },
-       fontFamily = {
+       fontFamily: {
   serif: ["Merriweather", "serif"],
   sans: ["Inter", "system-ui", "sans-serif"],
   mono: ["JetBrains Mono", "monospace"],
