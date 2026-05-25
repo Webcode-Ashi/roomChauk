@@ -120,10 +120,7 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
-              <p className="text-xs text-white/30 uppercase tracking-wider mb-1">Support Hours</p>
-              <p className="text-sm text-white/60">Mon – Sat: 9 AM – 8 PM IST</p>
-            </div>
+           
           </div>
         </div>
 

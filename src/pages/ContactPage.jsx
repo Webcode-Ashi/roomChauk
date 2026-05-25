@@ -15,7 +15,6 @@ export default function ContactPage() {
     { icon: MapPin, title: 'Our Office', detail: '5th Floor, Tech Park, Banjara Hills, Hyderabad – 500034, Telangana' },
     { icon: Phone, title: 'Call Us', detail: '+91 800 123 4567\n+91 800 765 4321' },
     { icon: Mail, title: 'Email Us', detail: 'hello@roomchauk.in\nsupport@roomchauk.in' },
-    { icon: Clock, title: 'Working Hours', detail: 'Monday – Saturday\n9:00 AM – 8:00 PM IST' },
   ];
 
   return (
